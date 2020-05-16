@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Sharing App</string>
+    <string name="title_hint">Title</string>
+    <string name="maker_hint">Maker</string>
+    <string name="description_hint">Description</string>
+    <string name="length_hint">Length</string>
+    <string name="width_hint">Width</string>
+    <string name="height_hint">Height</string>
+    <string name="save">Save</string>
+    <string name="image_icon">Image Icon</string>
+    <string name="dimensions_hint">L x W x H</string>
+    <string name="status_hint">Status</string>
+    <string name="borrower_hint">Borrower</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="toggle_available">Available</string>
+    <string name="toggle_borrowed">Borrowed</string>
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Email</string>
+    <string name="delete">Delete</string>
+    <string name="contacts">Contacts</string>
+
+</resources>

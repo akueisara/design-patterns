@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.sharingapp.AddItemActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/title_hint"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/title_hint"
+            android:inputType="text"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/maker_tv"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/maker_hint"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <EditText
+            android:id="@+id/maker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/maker_hint"
+            android:inputType="text"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/description_hint"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description_hint"
+            android:inputType="text"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/dimensions_tv"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dimensions_hint"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+        <EditText
+            android:id="@+id/length"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/length_hint"
+            android:inputType="numberDecimal"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24"/>
+
+        <EditText
+            android:id="@+id/width"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/width_hint"
+            android:inputType="numberDecimal"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/height_hint"
+            android:inputType="numberDecimal"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:maxLength="24" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:label="@string/image_icon"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/add_image_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="addPhoto"
+            android:layout_gravity="center"
+            android:background="@android:drawable/ic_menu_camera" />
+
+        <ImageButton
+            android:id="@+id/cancel_image_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="deletePhoto"
+            android:layout_gravity="center"
+            android:background="@android:drawable/ic_menu_close_clear_cancel" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:onClick="saveItem"
+            android:text="@string/save"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+    </LinearLayout>
+</LinearLayout>
