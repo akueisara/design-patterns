@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Item Adapter is responsible for what information is displayed in ListView entries.
+ * ItemAdapter is responsible for what information is displayed in ListView entries.
  */
 public class ItemAdapter extends ArrayAdapter<Item> {
 
@@ -33,14 +33,13 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         // getItem(position) gets the "item" at "position" in the "items" ArrayList
         // (where "items" is a parameter in the ItemAdapter creator as seen above ^^)
-        // Note: getItem() is not a user-defined method in the Item/ItemList class!
-        // The "Item" in the method name is a coincidence...
         Item item = getItem(position);
+        ItemController item_controller = new ItemController(item);
 
-        String title = "Title: " + item.getTitle();
-        String description = "Description: " + item.getDescription();
-        Bitmap thumbnail = item.getImage();
-        String status = "Status: " + item.getStatus();
+        String title = "Title: " + item_controller.getTitle();
+        String description = "Description: " + item_controller.getDescription();
+        Bitmap thumbnail = item_controller.getImage();
+        String status = "Status: " + item_controller.getStatus();
 
         // Check if an existing view is being reused, otherwise inflate the view.
         if (convertView == null) {

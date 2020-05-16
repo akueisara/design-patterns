@@ -27,11 +27,14 @@ public class AddItemActivity extends AppCompatActivity {
     private int REQUEST_CODE = 1;
 
     private ItemList item_list = new ItemList();
+    private ItemListController item_list_controller = new ItemListController(item_list);
+
     private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_add_item);
 
         title = (EditText) findViewById(R.id.title);
@@ -45,7 +48,7 @@ public class AddItemActivity extends AppCompatActivity {
         photo.setImageResource(android.R.drawable.ic_menu_gallery);
 
         context = getApplicationContext();
-        item_list.loadItems(context);
+        item_list_controller.loadItems(context);
     }
 
     public void saveItem (View view) {
@@ -88,14 +91,12 @@ public class AddItemActivity extends AppCompatActivity {
         }
 
         Item item = new Item(title_str, maker_str, description_str, image, null);
-        item.setDimensions(length_str, width_str, height_str);
+        ItemController item_controller = new ItemController(item);
+        item_controller.setDimensions(length_str, width_str, height_str);
 
         // Add item
-        AddItemCommand add_item_command = new AddItemCommand(item_list, item, context);
-        add_item_command.execute();
-
-        boolean success = add_item_command.isExecuted();
-        if (!success){
+        boolean success = item_list_controller.addItem(item, context);
+        if (!success) {
             return;
         }
 
